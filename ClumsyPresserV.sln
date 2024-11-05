@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClumsyPresserV", "ClumsyPresserV\ClumsyPresserV.csproj", "{8DDF4801-E19C-4885-B089-22773CA8D023}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8DDF4801-E19C-4885-B089-22773CA8D023}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DDF4801-E19C-4885-B089-22773CA8D023}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DDF4801-E19C-4885-B089-22773CA8D023}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DDF4801-E19C-4885-B089-22773CA8D023}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ADE35BF6-457E-415F-BAA2-6C7DA0AD80F9}
+	EndGlobalSection
+EndGlobal
