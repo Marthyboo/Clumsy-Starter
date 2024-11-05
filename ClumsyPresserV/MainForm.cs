@@ -212,32 +212,39 @@ namespace ClumsyPresserV
         }
 
         private void FindClumsyWindow()
-        {
-            try
-            {
-                // More aggressive window search
-                for (int i = 0; i < 2; i++) // Try twice
-                {
-                    AutomationElement desktop = AutomationElement.RootElement;
-                    cachedWindow = desktop.FindFirst(
-                        TreeScope.Children,
-                        new PropertyCondition(AutomationElement.NameProperty, "clumsy 0.3"));
+     {
+         try
+         {
+             AutomationElement desktop = AutomationElement.RootElement;
 
-                    if (cachedWindow != null) break;
+             // Find all windows
+             var allWindows = desktop.FindAll(
+                 TreeScope.Children,
+                 new PropertyCondition(AutomationElement.ControlTypeProperty, ControlType.Window));
 
-                    // Small delay before second attempt if needed
-                    if (i == 0 && cachedWindow == null)
-                    {
-                        System.Threading.Thread.Sleep(50);
-                    }
-                }
-            }
-            catch
-            {
-                cachedWindow = null;
-            }
-        }
-
+             foreach (AutomationElement window in allWindows)
+             {
+                 try
+                 {
+                     string windowName = window.Current.Name.ToLower();
+                     if (windowName.StartsWith("clumsy") && windowName.Contains("."))
+                     {
+                         cachedWindow = window;
+                         break;
+                     }
+                 }
+                 catch
+                 {
+                     continue;
+                 }
+             }
+         }
+         catch
+         {
+             cachedWindow = null;
+         }
+     }
+     
         private void SetupKeyboardHook()
         {
             _globalKeyboardHook = new GlobalKeyboardHook();
